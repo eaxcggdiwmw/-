@@ -23,15 +23,10 @@ if __name__ == '__main__':
         fp1.write('\n')
     fp1.close()
     # 获取接口内容
-    list2 = []
-    fp2 = open('detail.xls', 'w', encoding='utf-8')
+    fp2 = open('detail1.xls', 'w', encoding='utf-8')
     for n in list1:
         detail = response_json["paths"][n]
-        list2.append(detail)
-        fp2.write(n)
-        fp2.write(':')
-        fp2.write('\n')
-        json.dump(detail, fp2, ensure_ascii=False)
+        print(detail["get"]["tags"])
         fp2.write('\n')
     fp2.close()
 
